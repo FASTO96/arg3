@@ -18,7 +18,7 @@ spec:
         app: and
     spec:
       containers:
-      - image: sab22/php4:3
+      - image: sab22/php4:4
         name: php
         ports:
         - containerPort: 80
