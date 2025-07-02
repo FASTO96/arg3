@@ -1,0 +1,28 @@
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: f1
+  name: f1
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: f1
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: f1
+    spec:
+      containers:
+      - image: sab22/f1:5
+        name: image
+        ports:
+        - containerPort: 80
+      imagePullSecrets:
+      - name: regcred
+

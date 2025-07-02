@@ -1,0 +1,20 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ingress-resource-f1
+  namespace: myapp
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: f1.php
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: nginx.example.com
+    http:
+      paths:
+      - path: /f1
+        pathType: Prefix
+        backend:
+          service:
+            name: f1
+            port:
+              number: 80
