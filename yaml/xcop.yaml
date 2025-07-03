@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: xdepcop25
+  name: xdepcop25
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: xdepcop25
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: xdepcop25
+    spec:
+      containers:
+      - image: sab22/cop25:5
+        name: php
+        ports:
+        - containerPort: 80
