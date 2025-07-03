@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: cop22
+  name: cop252
 spec:
   selector:
     matchLabels:
-      app: cop2
+      app: cop252
   replicas: 1
   template:
     metadata:
       labels:
-        app: cop22
+        app: cop252
     spec:
       containers:
-      - name: cop22
+      - name: cop252
         image: sab22/cop25:5
         ports:
         - containerPort: 80
