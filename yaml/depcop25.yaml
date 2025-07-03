@@ -1,19 +1,26 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: cop252
+  creationTimestamp: null
+  labels:
+    app: depcop25
+  name: depcop25
 spec:
+  replicas: 1
   selector:
     matchLabels:
-      app: cop252
-  replicas: 1
+      app: depcop25
+  strategy: {}
   template:
     metadata:
+      creationTimestamp: null
       labels:
-        app: cop252
+        app: depcop25
     spec:
       containers:
-      - name: cop252
-        image: sab22/cop25:5
+      - image: sab22/cop25:5
+        name: php
         ports:
         - containerPort: 80
+        resources: {}
+status: {}
